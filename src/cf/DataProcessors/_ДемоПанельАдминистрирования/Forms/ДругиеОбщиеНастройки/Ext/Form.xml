@@ -106,6 +106,48 @@
 				</CheckBoxField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="_ДемоГруппаИспользоватьПодарочныеСертификаты" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Демо группа использовать подарочные сертификаты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Демо группа использовать подарочные сертификаты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="_ДемоГруппаИспользоватьПодарочныеСертификатыРасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<CheckBoxField name="ИспользоватьПодарочныеСертификаты" id="26">
+					<DataPath>НаборКонстант.ИспользоватьПодарочныеСертификаты</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать подарочные сертификаты</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Если на предприятии используются подарочные сертификаты для оплаты товаров, работ, услуг</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользоватьПодарочныеСертификатыКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ИспользоватьПодарочныеСертификатыРасширеннаяПодсказка" id="28"/>
+					<Events>
+						<Event name="OnChange">ИспользоватьПодарочныеСертификатыПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="НаборКонстант" id="1">
