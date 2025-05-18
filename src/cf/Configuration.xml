@@ -2916,6 +2916,7 @@
 			<Constant>УдалитьЛогинДоступаКСервисуMorpher</Constant>
 			<Constant>УдалитьНастройкиВходаПользователей</Constant>
 			<Constant>ИспользоватьПодарочныеСертификаты</Constant>
+			<Constant>ШагНоминальнойСтоимостиПодарочныхСертификатов</Constant>
 			<CommonForm>_ДемоМоиНастройки</CommonForm>
 			<CommonForm>_ДемоПримечание</CommonForm>
 			<CommonForm>_ДемоФормаВыбораДополнительныхУсловий</CommonForm>
@@ -3150,6 +3151,8 @@
 			<Catalog>ЯзыкиПечатныхФорм</Catalog>
 			<Catalog>Удалить_ДемоОбщиеСведения</Catalog>
 			<Catalog>УдалитьОчередьЗаданий</Catalog>
+			<Catalog>ВидыПодарочныхСертификатов</Catalog>
+			<Catalog>ПодарочныеСертификаты</Catalog>
 			<Document>_ДемоЗаказПокупателя</Document>
 			<Document>_ДемоКорректировкаОстатковТоваровВМестахХранения</Document>
 			<Document>_ДемоНачислениеЗарплаты</Document>
@@ -3506,6 +3509,7 @@
 			<DataProcessor>УправлениеСистемойВзаимодействия</DataProcessor>
 			<DataProcessor>УстановкаОбновлений</DataProcessor>
 			<DataProcessor>ФайлыБТС</DataProcessor>
+			<DataProcessor>ГенерацияПодарочныхСертификатов</DataProcessor>
 			<InformationRegister>_ДемоГрафикиРаботы</InformationRegister>
 			<InformationRegister>_ДемоЗаведующиеМестамиХранения</InformationRegister>
 			<InformationRegister>_ДемоЗагружаемыеПоступленияОтЮридическихЛиц</InformationRegister>

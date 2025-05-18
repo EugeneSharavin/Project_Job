@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаСгенерироватьПодарочныеСертификаты" id="37">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СгенерироватьПодарочныеСертификаты</CommandName>
+				<ExtendedTooltip name="ФормаСгенерироватьПодарочныеСертификатыРасширеннаяПодсказка" id="38"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="39">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="40"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ВидПодарочныхСертификатов" id="1">
+			<DataPath>Объект.ВидПодарочныхСертификатов</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ВидПодарочныхСертификатовКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ВидПодарочныхСертификатовРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ВидПодарочныхСертификатовПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ВариантГенерацииПодарочныхСертификатов" id="23">
+			<DataPath>Объект.ВариантГенерацииПодарочныхСертификатов</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать подарочные сертификаты</v8:content>
+				</v8:item>
+			</Title>
+			<DropListButton>true</DropListButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<TextEdit>false</TextEdit>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>с номерами в указанном диапазоне</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">с номерами в указанном диапазоне</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>со всеми возможными номерами</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">со всеми возможными номерами</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВариантГенерацииПодарочныхСертификатовКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="ВариантГенерацииПодарочныхСертификатовРасширеннаяПодсказка" id="25"/>
+			<Events>
+				<Event name="OnChange">ВариантГенерацииПодарочныхСертификатовПриИзменении</Event>
+				<Event name="Clearing">ВариантГенерацииПодарочныхСертификатовОчистка</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаДиапазонНомеровПодарочныхСертификатов" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа диапазон номеров подарочных сертификатов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа диапазон номеров подарочных сертификатов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДиапазонНомеровПодарочныхСертификатовРасширеннаяПодсказка" id="27"/>
+			<ChildItems>
+				<PictureDecoration name="ДекорацияОтступ" id="34">
+					<Width>23</Width>
+					<Height>1</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Декорация отступ</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияОтступКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ДекорацияОтступРасширеннаяПодсказка" id="36"/>
+				</PictureDecoration>
+				<InputField name="ДиапазонНомераС" id="28">
+					<DataPath>Объект.ДиапазонНомераС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>с</v8:content>
+						</v8:item>
+					</Title>
+					<Width>18</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДиапазонНомераСКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ДиапазонНомераСРасширеннаяПодсказка" id="30"/>
+				</InputField>
+				<InputField name="ДиапазонНомераПо" id="31">
+					<DataPath>Объект.ДиапазонНомераПо</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по</v8:content>
+						</v8:item>
+					</Title>
+					<Width>18</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДиапазонНомераПоКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ДиапазонНомераПоРасширеннаяПодсказка" id="33"/>
+				</InputField>
+				<InputField name="ШаблонНомера" id="41">
+					<DataPath>ШаблонНомера</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ШаблонНомераКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ШаблонНомераРасширеннаяПодсказка" id="43"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ПодарочныеСертификаты" id="4">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ПодарочныеСертификаты</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПодарочныеСертификатыКонтекстноеМеню" id="5"/>
+			<AutoCommandBar name="ПодарочныеСертификатыКоманднаяПанель" id="6">
+				<ChildItems>
+					<Button name="ПодарочныеСертификатыОбновитьСписокСертификатов" id="44">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОбновитьСписокСертификатов</CommandName>
+						<ExtendedTooltip name="ПодарочныеСертификатыОбновитьСписокСертификатовРасширеннаяПодсказка" id="45"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ПодарочныеСертификатыРасширеннаяПодсказка" id="7"/>
+			<SearchStringAddition name="ПодарочныеСертификатыСтрокаПоиска" id="8">
+				<AdditionSource>
+					<Item>ПодарочныеСертификаты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодарочныеСертификатыСтрокаПоискаКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ПодарочныеСертификатыСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПодарочныеСертификатыСостояниеПросмотра" id="11">
+				<AdditionSource>
+					<Item>ПодарочныеСертификаты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодарочныеСертификатыСостояниеПросмотраКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ПодарочныеСертификатыСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПодарочныеСертификатыУправлениеПоиском" id="14">
+				<AdditionSource>
+					<Item>ПодарочныеСертификаты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодарочныеСертификатыУправлениеПоискомКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ПодарочныеСертификатыУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ПодарочныеСертификатыВыбор</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ПодарочныеСертификатыНомерСтроки" id="17">
+					<DataPath>Объект.ПодарочныеСертификаты.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПодарочныеСертификатыНомерСтрокиКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыНомерСтрокиРасширеннаяПодсказка" id="19"/>
+				</LabelField>
+				<InputField name="ПодарочныеСертификатыПодарочныйСертификат" id="20">
+					<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ГенерацияПодарочныхСертификатов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ШаблонНомера" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон номера
+(9 - любая цифра)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СгенерироватьПодарочныеСертификаты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать подарочные сертификаты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать подарочные сертификаты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СгенерироватьПодарочныеСертификаты</Action>
+		</Command>
+		<Command name="ОбновитьСписокСертификатов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список сертификатов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список сертификатов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьСписокСертификатов</Action>
+			<Representation>Picture</Representation>
+		</Command>
+	</Commands>
+</Form>

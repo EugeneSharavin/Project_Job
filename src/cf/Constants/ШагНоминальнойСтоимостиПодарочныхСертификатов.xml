@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
-	<Constant uuid="89c71bb8-5151-4097-84d9-0a5b912d4729">
+	<Constant uuid="754df19a-cb24-482e-b463-5bd5a91bb681">
 		<InternalInfo>
-			<xr:GeneratedType name="ConstantManager.ИспользоватьПодарочныеСертификаты" category="Manager">
-				<xr:TypeId>4de85b88-61e1-46b4-b128-0cf49ae5f54d</xr:TypeId>
-				<xr:ValueId>8763afa3-b6ea-419d-ba3f-6a0cad1952b7</xr:ValueId>
+			<xr:GeneratedType name="ConstantManager.ШагНоминальнойСтоимостиПодарочныхСертификатов" category="Manager">
+				<xr:TypeId>1d1e734b-25ba-4c45-bb4e-f019120dce13</xr:TypeId>
+				<xr:ValueId>bd4c789c-0fd4-4ef3-bb02-4db8c73ce9d8</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ConstantValueManager.ИспользоватьПодарочныеСертификаты" category="ValueManager">
-				<xr:TypeId>1fa7ac09-24ee-4b05-97ef-f6a36429a0f0</xr:TypeId>
-				<xr:ValueId>91a642ec-dbbb-47d1-b4ad-9182ab186ea2</xr:ValueId>
+			<xr:GeneratedType name="ConstantValueManager.ШагНоминальнойСтоимостиПодарочныхСертификатов" category="ValueManager">
+				<xr:TypeId>d5131b17-ded1-46ee-b981-8cd629ccb2ec</xr:TypeId>
+				<xr:ValueId>69065d4b-2d7d-4ed8-b20a-3095b3c1d54e</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ConstantValueKey.ИспользоватьПодарочныеСертификаты" category="ValueKey">
-				<xr:TypeId>7087371c-7114-4d00-95bf-15a533ca9f7a</xr:TypeId>
-				<xr:ValueId>c7de35fd-5f13-4b5f-9689-2b21745dcbba</xr:ValueId>
+			<xr:GeneratedType name="ConstantValueKey.ШагНоминальнойСтоимостиПодарочныхСертификатов" category="ValueKey">
+				<xr:TypeId>bf28e458-e988-4d20-b00c-8d94ae6670fe</xr:TypeId>
+				<xr:ValueId>4e273505-d361-4c60-a2d0-43c175d01699</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ИспользоватьПодарочныеСертификаты</Name>
+			<Name>ШагНоминальнойСтоимостиПодарочныхСертификатов</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Использовать подарочные сертификаты</v8:content>
+					<v8:content>Шаг номинальной стоимости подарочных сертификатов</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>Добавил Шаравин Евгений 17.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
+			<Comment/>
 			<Type>
-				<v8:Type>xs:boolean</v8:Type>
+				<v8:TypeSet>cfg:DefinedType.ДенежнаяСуммаНеотрицательная</v8:TypeSet>
 			</Type>
-			<UseStandardCommands>true</UseStandardCommands>
+			<UseStandardCommands>false</UseStandardCommands>
 			<DefaultForm/>
 			<ExtendedPresentation/>
 			<Explanation/>

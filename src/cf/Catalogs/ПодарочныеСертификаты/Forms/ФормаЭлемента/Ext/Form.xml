@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияНадписьНеДействует" id="35">
+			<TextColor>#FF0000</TextColor>
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данный вид подарочных сертификатов не действует
+(новые не выпускаются и более не реализуются клиентам)</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияНадписьНеДействуетКонтекстноеМеню" id="36"/>
+			<ExtendedTooltip name="ДекорацияНадписьНеДействуетРасширеннаяПодсказка" id="37"/>
+		</LabelDecoration>
+		<InputField name="Владелец" id="4">
+			<DataPath>Объект.Owner</DataPath>
+			<DropListButton>false</DropListButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="Clearing">ВладелецОчистка</Event>
+			</Events>
+		</InputField>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<UsualGroup name="ГруппаНоминальнаяСтоимостьВалюта" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номинальная стоимость валюта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номинальная стоимость валюта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНоминальнаяСтоимостьВалютаРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<LabelField name="ВладелецНоминальнаяСтоимость" id="27">
+					<DataPath>Объект.Owner.НоминальнаяСтоимость</DataPath>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<ContextMenu name="ВладелецНоминальнаяСтоимостьКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ВладелецНоминальнаяСтоимостьРасширеннаяПодсказка" id="29"/>
+				</LabelField>
+				<LabelField name="ВладелецВалюта" id="12">
+					<DataPath>Объект.Owner.Валюта</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<ContextMenu name="ВладелецВалютаКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ВладелецВалютаРасширеннаяПодсказка" id="14"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="ВладелецСрокДействия" id="15">
+			<DataPath>Объект.Owner.СрокДействия</DataPath>
+			<ContextMenu name="ВладелецСрокДействияКонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="ВладелецСрокДействияРасширеннаяПодсказка" id="17"/>
+		</LabelField>
+		<UsualGroup name="ГруппаВозвратныйМногократноеИпользование" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа возвратный многократное ипользование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа возвратный многократное ипользование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВозвратныйМногократноеИпользованиеРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<CheckBoxField name="ВладелецВозвратный" id="18">
+					<DataPath>Объект.Owner.Возвратный</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВладелецВозвратныйКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ВладелецВозвратныйРасширеннаяПодсказка" id="20"/>
+				</CheckBoxField>
+				<PictureDecoration name="Декорация1" id="32">
+					<Width>4</Width>
+					<Height>1</Height>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="34"/>
+				</PictureDecoration>
+				<CheckBoxField name="ВладелецМногократноеИспользование" id="21">
+					<DataPath>Объект.Owner.МногократноеИспользование</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВладелецМногократноеИспользованиеКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ВладелецМногократноеИспользованиеРасширеннаяПодсказка" id="23"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПодарочныеСертификаты</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

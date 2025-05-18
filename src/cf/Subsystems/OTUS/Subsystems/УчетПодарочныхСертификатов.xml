@@ -9,7 +9,7 @@
 					<v8:content>Учет подарочных сертификатов</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>Добавил Шаравин Евгений 10.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
+			<Comment>Добавил Шаравин Евгений 17.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
 			<IncludeHelpInContents>true</IncludeHelpInContents>
 			<IncludeInCommandInterface>true</IncludeInCommandInterface>
 			<UseOneCommand>false</UseOneCommand>
@@ -18,6 +18,10 @@
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.ИспользоватьПодарочныеСертификаты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.ИспользоватьПодарочныеСертификаты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ВидыПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодарочныеСертификаты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ШагНоминальнойСтоимостиПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ГенерацияПодарочныхСертификатов</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

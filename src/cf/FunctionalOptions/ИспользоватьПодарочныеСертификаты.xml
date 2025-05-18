@@ -9,10 +9,27 @@
 					<v8:content>Использовать подарочные сертификаты</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>Добавил Шаравин Евгений 10.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
+			<Comment>Добавил Шаравин Евгений 17.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
 			<Location>Constant.ИспользоватьПодарочныеСертификаты</Location>
 			<PrivilegedGetMode>true</PrivilegedGetMode>
-			<Content/>
+			<Content>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов</xr:Object>
+				<xr:Object>Catalog.ПодарочныеСертификаты</xr:Object>
+				<xr:Object>Constant.ШагНоминальнойСтоимостиПодарочныхСертификатов</xr:Object>
+				<xr:Object>Subsystem.OTUS.Subsystem.УчетПодарочныхСертификатов</xr:Object>
+				<xr:Object>DataProcessor.ГенерацияПодарочныхСертификатов</xr:Object>
+				<xr:Object>DataProcessor.ГенерацияПодарочныхСертификатов.Command.СгенерироватьПодарочныеСертификаты</xr:Object>
+				<xr:Object>DataProcessor.ГенерацияПодарочныхСертификатов.Attribute.ВидПодарочныхСертификатов</xr:Object>
+				<xr:Object>DataProcessor.ГенерацияПодарочныхСертификатов.TabularSection.ПодарочныеСертификаты</xr:Object>
+				<xr:Object>DataProcessor.ГенерацияПодарочныхСертификатов.TabularSection.ПодарочныеСертификаты.Attribute.ПодарочныйСертификат</xr:Object>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.НоминальнаяСтоимость</xr:Object>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.Валюта</xr:Object>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.СрокДействия</xr:Object>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.Возвратный</xr:Object>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.МногократноеИспользование</xr:Object>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.ШаблонНомера</xr:Object>
+				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.Действует</xr:Object>
+			</Content>
 		</Properties>
 	</FunctionalOption>
 </MetaDataObject>
