@@ -71,15 +71,30 @@
 			</SearchControlAddition>
 			<ChildItems>
 				<LabelField name="Код" id="16">
-					<DataPath>Список.Code</DataPath>
+					<DataPath>Список.Код</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="КодКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="18"/>
 				</LabelField>
 				<LabelField name="Владелец" id="19">
-					<DataPath>Список.Owner</DataPath>
+					<DataPath>Список.Владелец</DataPath>
 					<ContextMenu name="ВладелецКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<LabelField name="ТекущийСтатус" id="22">
+					<DataPath>Список.ТекущийСтатус</DataPath>
+					<ContextMenu name="ТекущийСтатусКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ТекущийСтатусРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="ДействуетДо" id="28">
+					<DataPath>Список.ДействуетДо</DataPath>
+					<ContextMenu name="ДействуетДоКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ДействуетДоРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="НеиспользованныйОстатокСтоимости" id="25">
+					<DataPath>Список.НеиспользованныйОстатокСтоимости</DataPath>
+					<ContextMenu name="НеиспользованныйОстатокСтоимостиКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="НеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="27"/>
 				</LabelField>
 			</ChildItems>
 		</Table>
@@ -91,8 +106,93 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>false</ManualQuery>
-				<DynamicDataRead>true</DynamicDataRead>
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникПодарочныеСертификаты.Ссылка КАК Ссылка,
+	СправочникПодарочныеСертификаты.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникПодарочныеСертификаты.Владелец КАК Владелец,
+	СправочникПодарочныеСертификаты.Код КАК Код,
+	СправочникПодарочныеСертификаты.Предопределенный КАК Предопределенный,
+	СправочникПодарочныеСертификаты.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	ЕСТЬNULL(ИсторияСтатусовПодарочныхСертификатовСрезПоследних.Статус, "Не активирован") КАК ТекущийСтатус,
+	ИсторияСтатусовПодарочныхСертификатовСрезПоследних.ДействуетДо КАК ДействуетДо,
+	ПодарочныеСертификатыОстатки.СуммаОстаток КАК НеиспользованныйОстатокСтоимости
+ИЗ
+	Справочник.ПодарочныеСертификаты КАК СправочникПодарочныеСертификаты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИсторияСтатусовПодарочныхСертификатов.СрезПоследних КАК ИсторияСтатусовПодарочныхСертификатовСрезПоследних
+		ПО ИсторияСтатусовПодарочныхСертификатовСрезПоследних.ПодарочныйСертификат = СправочникПодарочныеСертификаты.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ПодарочныеСертификаты.Остатки КАК ПодарочныеСертификатыОстатки
+		ПО ПодарочныеСертификатыОстатки.ПодарочныйСертификат = СправочникПодарочныеСертификаты.Ссылка</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Код</dcssch:dataPath>
+					<dcssch:field>Код</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Владелец</dcssch:dataPath>
+					<dcssch:field>Владелец</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Предопределенный</dcssch:dataPath>
+					<dcssch:field>Предопределенный</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИмяПредопределенныхДанных</dcssch:dataPath>
+					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПодарочныйСертификат</dcssch:dataPath>
+					<dcssch:field>ПодарочныйСертификат</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекущийСтатус</dcssch:dataPath>
+					<dcssch:field>ТекущийСтатус</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текущий статус</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НеиспользованныйОстатокСтоимости</dcssch:dataPath>
+					<dcssch:field>НеиспользованныйОстатокСтоимости</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Неиспользованный остаток стоимости</v8:content>
+						</v8:item>
+					</dcssch:title>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДействуетДо</dcssch:dataPath>
+					<dcssch:field>ДействуетДо</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>Период</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+					<dcssch:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcssch:value>
+					<dcssch:useRestriction>false</dcssch:useRestriction>
+				</Parameter>
 				<MainTable>Catalog.ПодарочныеСертификаты</MainTable>
 				<ListSettings>
 					<dcsset:filter>

@@ -22,6 +22,10 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодарочныеСертификаты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.ШагНоминальнойСтоимостиПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ГенерацияПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИсторияСтатусовПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ПодарочныеСертификаты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ВводОстатковПодарочныхСертификатов</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

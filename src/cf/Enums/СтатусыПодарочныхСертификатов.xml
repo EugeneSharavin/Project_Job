@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Enum uuid="ee696932-9fcc-46e8-b9fc-4eacb3608410">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.СтатусыПодарочныхСертификатов" category="Ref">
+				<xr:TypeId>6c03e8ac-a819-4dbd-8888-54ac28b7a171</xr:TypeId>
+				<xr:ValueId>5460eef0-3993-4da7-baff-eaaf90140d7c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.СтатусыПодарочныхСертификатов" category="Manager">
+				<xr:TypeId>7e0ceadf-74c4-4702-a813-e9d953bef0d5</xr:TypeId>
+				<xr:ValueId>f767239c-5a20-4cb0-bbf2-59f26723f09a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.СтатусыПодарочныхСертификатов" category="List">
+				<xr:TypeId>53e18046-f55d-45e9-aa52-08686ce79a78</xr:TypeId>
+				<xr:ValueId>d8ec6855-2679-4bcb-8d6e-a167d9e91297</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>СтатусыПодарочныхСертификатов</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статусы подарочных сертификатов</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Добавил Шаравин Евгений 18.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="badae713-5b19-4448-a04d-f32b0ef8a015">
+				<Properties>
+					<Name>Активирован</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Активирован (передан клиенту)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="d1d0cdd3-4136-4e9a-b5dd-792d9e36c515">
+				<Properties>
+					<Name>ЧастичноИспользован</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Частично использован</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="6cf7fe2d-7490-4cee-ae53-bfd8ca062241">
+				<Properties>
+					<Name>ПолностьюИспользован</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полностью использован</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="c63c5832-80d2-4f53-84a7-1c613445b2c5">
+				<Properties>
+					<Name>Возвращен</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Возвращен</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="4ea64ecb-5050-4432-87b0-9912e0593415">
+				<Properties>
+					<Name>НеИспользован</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Не использован</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

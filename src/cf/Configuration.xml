@@ -1029,6 +1029,7 @@
 			<CommonPicture>ЭтапыПодтверждения</CommonPicture>
 			<CommonPicture>ЯндексДиск</CommonPicture>
 			<CommonPicture>ЯндексКарты</CommonPicture>
+			<CommonPicture>ЛоготипOTUS</CommonPicture>
 			<SessionParameter>_ДемоТекущийПроект</SessionParameter>
 			<SessionParameter>АвторизованныйПользователь</SessionParameter>
 			<SessionParameter>БлокировкаСеансаБТС</SessionParameter>
@@ -3178,6 +3179,7 @@
 			<Document>ТелефонныйЗвонок</Document>
 			<Document>ЭлектронноеПисьмоВходящее</Document>
 			<Document>ЭлектронноеПисьмоИсходящее</Document>
+			<Document>ВводОстатковПодарочныхСертификатов</Document>
 			<Sequence>_ДемоДвижениеТоваров</Sequence>
 			<DocumentJournal>_ДемоЖурналВсехДокументов</DocumentJournal>
 			<DocumentJournal>_ДемоСкладскиеДокументы</DocumentJournal>
@@ -3304,6 +3306,7 @@
 			<Enum>ЦветаЗаметок</Enum>
 			<Enum>ЦветаСвойств</Enum>
 			<Enum>ЦветностиИзображения</Enum>
+			<Enum>СтатусыПодарочныхСертификатов</Enum>
 			<Report>_ДемоДинамикаИзмененийФайлов</Report>
 			<Report>_ДемоОборотноСальдоваяВедомость</Report>
 			<Report>_ДемоОтчетПоСчетамНаОплатуГлобальный</Report>
@@ -3768,8 +3771,10 @@
 			<InformationRegister>УдалитьСводныеПриложенияПорядокВыгрузкиОбъектов</InformationRegister>
 			<InformationRegister>УдалитьСводныеПриложенияСостояниеВыгрузки</InformationRegister>
 			<InformationRegister>УдалитьХранимыеФайлыВерсий</InformationRegister>
+			<InformationRegister>ИсторияСтатусовПодарочныхСертификатов</InformationRegister>
 			<AccumulationRegister>_ДемоОборотыПоСчетамНаОплату</AccumulationRegister>
 			<AccumulationRegister>_ДемоОстаткиТоваровВМестахХранения</AccumulationRegister>
+			<AccumulationRegister>ПодарочныеСертификаты</AccumulationRegister>
 			<ChartOfCharacteristicTypes>_ДемоВидыСубконто</ChartOfCharacteristicTypes>
 			<ChartOfCharacteristicTypes>ВопросыДляАнкетирования</ChartOfCharacteristicTypes>
 			<ChartOfCharacteristicTypes>ДополнительныеРеквизитыИСведения</ChartOfCharacteristicTypes>

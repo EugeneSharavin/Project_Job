@@ -29,6 +29,10 @@
 				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.МногократноеИспользование</xr:Object>
 				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.ШаблонНомера</xr:Object>
 				<xr:Object>Catalog.ВидыПодарочныхСертификатов.Attribute.Действует</xr:Object>
+				<xr:Object>Enum.СтатусыПодарочныхСертификатов</xr:Object>
+				<xr:Object>InformationRegister.ИсторияСтатусовПодарочныхСертификатов</xr:Object>
+				<xr:Object>AccumulationRegister.ПодарочныеСертификаты</xr:Object>
+				<xr:Object>Document.ВводОстатковПодарочныхСертификатов</xr:Object>
 			</Content>
 		</Properties>
 	</FunctionalOption>
