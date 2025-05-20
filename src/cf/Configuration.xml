@@ -2072,6 +2072,7 @@
 			<CommonModule>ЭлектроннаяПодписьСлужебныйПовтИсп</CommonModule>
 			<CommonModule>ЭлектроннаяПодписьСлужебныйРФ</CommonModule>
 			<CommonModule>ЯндексПереводчик</CommonModule>
+			<CommonModule>ПодарочныеСертификатыСервер</CommonModule>
 			<CommonAttribute>КомментарийЯзык1</CommonAttribute>
 			<CommonAttribute>КомментарийЯзык2</CommonAttribute>
 			<CommonAttribute>НаименованиеЯзык1</CommonAttribute>
@@ -2918,6 +2919,7 @@
 			<Constant>УдалитьНастройкиВходаПользователей</Constant>
 			<Constant>ИспользоватьПодарочныеСертификаты</Constant>
 			<Constant>ШагНоминальнойСтоимостиПодарочныхСертификатов</Constant>
+			<Constant>КонтролироватьУникальностьНомеровПодарочныхСертификатовПоВсемВидам</Constant>
 			<CommonForm>_ДемоМоиНастройки</CommonForm>
 			<CommonForm>_ДемоПримечание</CommonForm>
 			<CommonForm>_ДемоФормаВыбораДополнительныхУсловий</CommonForm>
@@ -3180,6 +3182,8 @@
 			<Document>ЭлектронноеПисьмоВходящее</Document>
 			<Document>ЭлектронноеПисьмоИсходящее</Document>
 			<Document>ВводОстатковПодарочныхСертификатов</Document>
+			<Document>РеализацияПодарочныхСертификатов</Document>
+			<Document>ВозвратПодарочныхСертификатов</Document>
 			<Sequence>_ДемоДвижениеТоваров</Sequence>
 			<DocumentJournal>_ДемоЖурналВсехДокументов</DocumentJournal>
 			<DocumentJournal>_ДемоСкладскиеДокументы</DocumentJournal>
@@ -3359,6 +3363,8 @@
 			<Report>УниверсальныйОтчет</Report>
 			<Report>УчастникиГруппДоступа</Report>
 			<Report>УчастникиГруппПользователей</Report>
+			<Report>СостояниеПодарочныхСертификатов</Report>
+			<Report>ИсторияОперацийПоПодарочнымСертификатам</Report>
 			<DataProcessor>_ДемоВводНаОснованииОприходованийТоваров</DataProcessor>
 			<DataProcessor>_ДемоВыборОбъектовМетаданных</DataProcessor>
 			<DataProcessor>_ДемоВыводСообщенийПользователю</DataProcessor>

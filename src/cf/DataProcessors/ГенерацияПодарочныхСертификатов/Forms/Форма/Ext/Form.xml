@@ -143,6 +143,50 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<RadioButtonField name="КонтрольУникальностиНомеров" id="46">
+			<DataPath>КонтрольУникальностиНомеров</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переключить контроль уникальности номеров нельзя, так как имеются совпадающие номера подарочных сертификатов у разных видов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>ShowRight</ToolTipRepresentation>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>по всем видам сертификатов</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">по всем видам сертификатов</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в рамках выбранного вида</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">в рамках выбранного вида</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="КонтрольУникальностиНомеровКонтекстноеМеню" id="47"/>
+			<ExtendedTooltip name="КонтрольУникальностиНомеровРасширеннаяПодсказка" id="48"/>
+			<Events>
+				<Event name="OnChange">КонтрольУникальностиНомеровПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
 		<Table name="ПодарочныеСертификаты" id="4">
 			<Representation>List</Representation>
 			<ChangeRowSet>false</ChangeRowSet>
@@ -227,6 +271,21 @@
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
 					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КонтрольУникальностиНомеров" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контроль уникальности номеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>

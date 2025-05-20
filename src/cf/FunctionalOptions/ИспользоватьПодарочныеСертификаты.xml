@@ -33,6 +33,12 @@
 				<xr:Object>InformationRegister.ИсторияСтатусовПодарочныхСертификатов</xr:Object>
 				<xr:Object>AccumulationRegister.ПодарочныеСертификаты</xr:Object>
 				<xr:Object>Document.ВводОстатковПодарочныхСертификатов</xr:Object>
+				<xr:Object>Document.РеализацияПодарочныхСертификатов</xr:Object>
+				<xr:Object>Document._ДемоРеализацияТоваров.TabularSection.ОплатаПодарочнымиСертификатами</xr:Object>
+				<xr:Object>Report.СостояниеПодарочныхСертификатов</xr:Object>
+				<xr:Object>Document.ВозвратПодарочныхСертификатов</xr:Object>
+				<xr:Object>Constant.КонтролироватьУникальностьНомеровПодарочныхСертификатовПоВсемВидам</xr:Object>
+				<xr:Object>Report.ИсторияОперацийПоПодарочнымСертификатам</xr:Object>
 			</Content>
 		</Properties>
 	</FunctionalOption>

@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНомерДата" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ПодарочныеСертификаты" id="13">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ПодарочныеСертификаты</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПодарочныеСертификатыКонтекстноеМеню" id="14"/>
+			<AutoCommandBar name="ПодарочныеСертификатыКоманднаяПанель" id="15"/>
+			<ExtendedTooltip name="ПодарочныеСертификатыРасширеннаяПодсказка" id="16"/>
+			<SearchStringAddition name="ПодарочныеСертификатыСтрокаПоиска" id="17">
+				<AdditionSource>
+					<Item>ПодарочныеСертификаты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодарочныеСертификатыСтрокаПоискаКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ПодарочныеСертификатыСтрокаПоискаРасширеннаяПодсказка" id="19"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПодарочныеСертификатыСостояниеПросмотра" id="20">
+				<AdditionSource>
+					<Item>ПодарочныеСертификаты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодарочныеСертификатыСостояниеПросмотраКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ПодарочныеСертификатыСостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПодарочныеСертификатыУправлениеПоиском" id="23">
+				<AdditionSource>
+					<Item>ПодарочныеСертификаты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодарочныеСертификатыУправлениеПоискомКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="ПодарочныеСертификатыУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnChange">ПодарочныеСертификатыПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ПодарочныеСертификатыНомерСтроки" id="26">
+					<DataPath>Объект.ПодарочныеСертификаты.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПодарочныеСертификатыНомерСтрокиКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыНомерСтрокиРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<InputField name="ПодарочныеСертификатыПодарочныйСертификат" id="29">
+					<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="OnChange">ПодарочныеСертификатыПодарочныйСертификатПриИзменении</Event>
+						<Event name="StartChoice">ПодарочныеСертификатыПодарочныйСертификатНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелец" id="36">
+					<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид подарочного сертификата</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатВладелецКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатВладелецРасширеннаяПодсказка" id="38"/>
+				</LabelField>
+				<ColumnGroup name="ПодарочныеСертификатыГруппаНоминальнаяСтоимость" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подарочные сертификаты группа номинальная стоимость</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подарочные сертификаты группа номинальная стоимость</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ПодарочныеСертификатыГруппаНоминальнаяСтоимостьРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелецНоминальнаяСтоимость" id="39">
+							<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner.НоминальнаяСтоимость</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатВладелецНоминальнаяСтоимостьКонтекстноеМеню" id="40"/>
+							<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатВладелецНоминальнаяСтоимостьРасширеннаяПодсказка" id="41"/>
+						</LabelField>
+						<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалюта" id="42">
+							<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner.Валюта</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалютаКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалютаРасширеннаяПодсказка" id="44"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ПодарочныеСертификатыГруппаГруппаНеиспользованныйОстатокСтоимости" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подарочные сертификаты группа группа неиспользованный остаток стоимости</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подарочные сертификаты группа группа неиспользованный остаток стоимости</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ПодарочныеСертификатыГруппаГруппаНеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="54"/>
+					<ChildItems>
+						<InputField name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимости" id="55">
+							<DataPath>Объект.ПодарочныеСертификаты.НеиспользованныйОстатокСтоимости</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимостиКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="57"/>
+						</InputField>
+						<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалюта1" id="58">
+							<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner.Валюта</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалюта1КонтекстноеМеню" id="59"/>
+							<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалюта1РасширеннаяПодсказка" id="60"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<LabelField name="ИтогоСтоимость" id="50">
+			<DataPath>ИтогоСтоимость</DataPath>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<ContextMenu name="ИтогоСтоимостьКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ИтогоСтоимостьРасширеннаяПодсказка" id="52"/>
+		</LabelField>
+		<UsualGroup name="ГруппаКомментарийОтветственный" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа комментарий ответственный</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа комментарий ответственный</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомментарийОтветственныйРасширеннаяПодсказка" id="35"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="10">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>60</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<InputField name="Ответственный" id="7">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>30</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ВозвратПодарочныхСертификатов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.ПодарочныеСертификаты">
+					<Column name="ДействуетДо" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Действует до</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:dateTime</v8:Type>
+							<v8:DateQualifiers>
+								<v8:DateFractions>Date</v8:DateFractions>
+							</v8:DateQualifiers>
+						</Type>
+					</Column>
+					<Column name="НеиспользованныйОстатокСтоимости" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Неиспользованный остаток стоимости</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ДенежнаяСуммаНеотрицательная</v8:TypeSet>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИтогоСтоимость" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итого стоимость</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.ИсторияСтатусовПодарочныхСертификатов.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.ПодарочныеСертификаты.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

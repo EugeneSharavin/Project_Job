@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
 	<ChildItems>
 		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
 			<Title>
@@ -18,8 +22,7 @@
 			<Representation>List</Representation>
 			<CommandBarLocation>None</CommandBarLocation>
 			<DefaultItem>true</DefaultItem>
-			<ChangeRowSet>false</ChangeRowSet>
-			<ChangeRowOrder>false</ChangeRowOrder>
+			<ChoiceMode>true</ChoiceMode>
 			<UseAlternationRowColor>true</UseAlternationRowColor>
 			<InitialTreeView>ExpandTopLevel</InitialTreeView>
 			<EnableStartDrag>true</EnableStartDrag>
@@ -81,20 +84,51 @@
 					<ContextMenu name="ВладелецКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="21"/>
 				</LabelField>
-				<LabelField name="ТекущийСтатус" id="22">
+				<ColumnGroup name="ГруппаНоминальнаяСтоимость" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа номинальная стоимость</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа номинальная стоимость</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ГруппаНоминальнаяСтоимостьРасширеннаяПодсказка" id="29"/>
+					<ChildItems>
+						<InputField name="ВладелецНоминальнаяСтоимость" id="22">
+							<DataPath>Список.Владелец.НоминальнаяСтоимость</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ВладелецНоминальнаяСтоимостьКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ВладелецНоминальнаяСтоимостьРасширеннаяПодсказка" id="24"/>
+						</InputField>
+						<InputField name="ВладелецВалюта" id="25">
+							<DataPath>Список.Владелец.Валюта</DataPath>
+							<ShowInHeader>false</ShowInHeader>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ВладелецВалютаКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ВладелецВалютаРасширеннаяПодсказка" id="27"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="ТекущийСтатус" id="30">
 					<DataPath>Список.ТекущийСтатус</DataPath>
-					<ContextMenu name="ТекущийСтатусКонтекстноеМеню" id="23"/>
-					<ExtendedTooltip name="ТекущийСтатусРасширеннаяПодсказка" id="24"/>
+					<ContextMenu name="ТекущийСтатусКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ТекущийСтатусРасширеннаяПодсказка" id="32"/>
 				</LabelField>
-				<LabelField name="ДействуетДо" id="28">
+				<LabelField name="ДействуетДо" id="33">
 					<DataPath>Список.ДействуетДо</DataPath>
-					<ContextMenu name="ДействуетДоКонтекстноеМеню" id="29"/>
-					<ExtendedTooltip name="ДействуетДоРасширеннаяПодсказка" id="30"/>
+					<ContextMenu name="ДействуетДоКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ДействуетДоРасширеннаяПодсказка" id="35"/>
 				</LabelField>
-				<LabelField name="НеиспользованныйОстатокСтоимости" id="25">
+				<LabelField name="НеиспользованныйОстатокСтоимости" id="36">
 					<DataPath>Список.НеиспользованныйОстатокСтоимости</DataPath>
-					<ContextMenu name="НеиспользованныйОстатокСтоимостиКонтекстноеМеню" id="26"/>
-					<ExtendedTooltip name="НеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="27"/>
+					<ContextMenu name="НеиспользованныйОстатокСтоимостиКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="НеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="38"/>
 				</LabelField>
 			</ChildItems>
 		</Table>
@@ -121,9 +155,9 @@
 ИЗ
 	Справочник.ПодарочныеСертификаты КАК СправочникПодарочныеСертификаты
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИсторияСтатусовПодарочныхСертификатов.СрезПоследних КАК ИсторияСтатусовПодарочныхСертификатовСрезПоследних
-		ПО ИсторияСтатусовПодарочныхСертификатовСрезПоследних.ПодарочныйСертификат = СправочникПодарочныеСертификаты.Ссылка
+		ПО (ИсторияСтатусовПодарочныхСертификатовСрезПоследних.ПодарочныйСертификат = СправочникПодарочныеСертификаты.Ссылка)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ПодарочныеСертификаты.Остатки КАК ПодарочныеСертификатыОстатки
-		ПО ПодарочныеСертификатыОстатки.ПодарочныйСертификат = СправочникПодарочныеСертификаты.Ссылка</QueryText>
+		ПО (ПодарочныеСертификатыОстатки.ПодарочныйСертификат = СправочникПодарочныеСертификаты.Ссылка)</QueryText>
 				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>Ссылка</dcssch:dataPath>
 					<dcssch:field>Ссылка</dcssch:field>
@@ -149,6 +183,10 @@
 					<dcssch:field>ИмяПредопределенныхДанных</dcssch:field>
 				</Field>
 				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДействуетДо</dcssch:dataPath>
+					<dcssch:field>ДействуетДо</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>ПодарочныйСертификат</dcssch:dataPath>
 					<dcssch:field>ПодарочныйСертификат</dcssch:field>
 				</Field>
@@ -171,10 +209,6 @@
 							<v8:content>Неиспользованный остаток стоимости</v8:content>
 						</v8:item>
 					</dcssch:title>
-				</Field>
-				<Field xsi:type="dcssch:DataSetFieldField">
-					<dcssch:dataPath>ДействуетДо</dcssch:dataPath>
-					<dcssch:field>ДействуетДо</dcssch:field>
 				</Field>
 				<Parameter>
 					<dcssch:name>Период</dcssch:name>
@@ -204,22 +238,6 @@
 						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
 					</dcsset:order>
 					<dcsset:conditionalAppearance>
-						<dcsset:item>
-							<dcsset:selection/>
-							<dcsset:filter>
-								<dcsset:item xsi:type="dcsset:FilterItemComparison">
-									<dcsset:left xsi:type="dcscor:Field">Владелец.Действует</dcsset:left>
-									<dcsset:comparisonType>Equal</dcsset:comparisonType>
-									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
-								</dcsset:item>
-							</dcsset:filter>
-							<dcsset:appearance>
-								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-									<dcscor:parameter>ЦветТекста</dcscor:parameter>
-									<dcscor:value xsi:type="v8ui:Color">#C0C0C0</dcscor:value>
-								</dcscor:item>
-							</dcsset:appearance>
-						</dcsset:item>
 						<dcsset:viewMode>Normal</dcsset:viewMode>
 						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
 					</dcsset:conditionalAppearance>
