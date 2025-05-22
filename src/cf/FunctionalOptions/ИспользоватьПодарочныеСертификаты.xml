@@ -39,6 +39,9 @@
 				<xr:Object>Document.ВозвратПодарочныхСертификатов</xr:Object>
 				<xr:Object>Constant.КонтролироватьУникальностьНомеровПодарочныхСертификатовПоВсемВидам</xr:Object>
 				<xr:Object>Report.ИсторияОперацийПоПодарочнымСертификатам</xr:Object>
+				<xr:Object>Document.ВыпускПодарочныхСертификатов</xr:Object>
+				<xr:Object>DocumentJournal.УчетПодарочныхСертификатов</xr:Object>
+				<xr:Object>Document.АннулированиеПодарочныхСертификатов</xr:Object>
 			</Content>
 		</Properties>
 	</FunctionalOption>

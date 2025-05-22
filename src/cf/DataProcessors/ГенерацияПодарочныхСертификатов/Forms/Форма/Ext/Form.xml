@@ -135,7 +135,14 @@
 					<ExtendedTooltip name="ДиапазонНомераПоРасширеннаяПодсказка" id="33"/>
 				</InputField>
 				<InputField name="ШаблонНомера" id="41">
-					<DataPath>ШаблонНомера</DataPath>
+					<DataPath>Объект.ШаблонНомера</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шаблон номера
+(9 - любая цифра)</v8:content>
+						</v8:item>
+					</Title>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<TextEdit>false</TextEdit>
 					<ContextMenu name="ШаблонНомераКонтекстноеМеню" id="42"/>
@@ -144,7 +151,7 @@
 			</ChildItems>
 		</UsualGroup>
 		<RadioButtonField name="КонтрольУникальностиНомеров" id="46">
-			<DataPath>КонтрольУникальностиНомеров</DataPath>
+			<DataPath>Объект.КонтрольУникальностиНомеров</DataPath>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -251,6 +258,46 @@
 				</InputField>
 			</ChildItems>
 		</Table>
+		<UsualGroup name="ГруппаКомментарийОтветственный" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа комментарий ответственный</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа комментарий ответственный</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомментарийОтветственныйРасширеннаяПодсказка" id="50"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="51">
+					<DataPath>Объект.Комментарий</DataPath>
+					<Width>60</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Здесь можно указать реквизиты приказа, распоряжения и т.п. на выпуск подарочных сертификатов</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="53"/>
+				</InputField>
+				<InputField name="Ответственный" id="54">
+					<DataPath>Объект.Ответственный</DataPath>
+					<Width>30</Width>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="56"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -258,37 +305,6 @@
 				<v8:Type>cfg:DataProcessorObject.ГенерацияПодарочныхСертификатов</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
-		</Attribute>
-		<Attribute name="ШаблонНомера" id="2">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Шаблон номера
-(9 - любая цифра)</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>20</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КонтрольУникальностиНомеров" id="3">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Контроль уникальности номеров</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>

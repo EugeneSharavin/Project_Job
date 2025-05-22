@@ -38,6 +38,18 @@
 			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 		</Properties>
 		<ChildObjects>
+			<EnumValue uuid="46082f83-4946-4ea4-9311-f02e177d2c0a">
+				<Properties>
+					<Name>Выпущен</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выпущен</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
 			<EnumValue uuid="badae713-5b19-4448-a04d-f32b0ef8a015">
 				<Properties>
 					<Name>Активирован</Name>
@@ -88,11 +100,11 @@
 			</EnumValue>
 			<EnumValue uuid="4ea64ecb-5050-4432-87b0-9912e0593415">
 				<Properties>
-					<Name>НеИспользован</Name>
+					<Name>Аннулирован</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Не использован</v8:content>
+							<v8:content>Аннулирован</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

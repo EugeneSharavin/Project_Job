@@ -1253,6 +1253,7 @@
 			<Role>ЧтениеУчетныхЗаписейЭлектроннойПочты</Role>
 			<Role>ЧтениеШаблоновСообщений</Role>
 			<Role>ШифрованиеИРасшифровкаДанных</Role>
+			<Role>ИспользованиеПодарочныхСертификатов</Role>
 			<CommonTemplate>_ДемоОформлениеОтчетовБежевый</CommonTemplate>
 			<CommonTemplate>_ДемоПФ_ODT_СчетНаОплату_ru</CommonTemplate>
 			<CommonTemplate>fresh</CommonTemplate>
@@ -2073,6 +2074,7 @@
 			<CommonModule>ЭлектроннаяПодписьСлужебныйРФ</CommonModule>
 			<CommonModule>ЯндексПереводчик</CommonModule>
 			<CommonModule>ПодарочныеСертификатыСервер</CommonModule>
+			<CommonModule>ПодарочныеСертификатыКлиент</CommonModule>
 			<CommonAttribute>КомментарийЯзык1</CommonAttribute>
 			<CommonAttribute>КомментарийЯзык2</CommonAttribute>
 			<CommonAttribute>НаименованиеЯзык1</CommonAttribute>
@@ -3182,13 +3184,16 @@
 			<Document>ЭлектронноеПисьмоВходящее</Document>
 			<Document>ЭлектронноеПисьмоИсходящее</Document>
 			<Document>ВводОстатковПодарочныхСертификатов</Document>
+			<Document>ВыпускПодарочныхСертификатов</Document>
 			<Document>РеализацияПодарочныхСертификатов</Document>
 			<Document>ВозвратПодарочныхСертификатов</Document>
+			<Document>АннулированиеПодарочныхСертификатов</Document>
 			<Sequence>_ДемоДвижениеТоваров</Sequence>
 			<DocumentJournal>_ДемоЖурналВсехДокументов</DocumentJournal>
 			<DocumentJournal>_ДемоСкладскиеДокументы</DocumentJournal>
 			<DocumentJournal>Взаимодействия</DocumentJournal>
 			<DocumentJournal>СогласияНаОбработкуПерсональныхДанных</DocumentJournal>
+			<DocumentJournal>УчетПодарочныхСертификатов</DocumentJournal>
 			<Enum>_ДемоВидыПлатежейВБюджет</Enum>
 			<Enum>_ДемоПолФизическогоЛица</Enum>
 			<Enum>_ДемоСовместимостьНоменклатуры</Enum>

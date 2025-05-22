@@ -38,6 +38,12 @@
 				</InputField>
 				<InputField name="Дата" id="4">
 					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>от</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
@@ -53,7 +59,15 @@
 			<DataPath>Объект.ПодарочныеСертификаты</DataPath>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="ПодарочныеСертификатыКонтекстноеМеню" id="14"/>
-			<AutoCommandBar name="ПодарочныеСертификатыКоманднаяПанель" id="15"/>
+			<AutoCommandBar name="ПодарочныеСертификатыКоманднаяПанель" id="15">
+				<ChildItems>
+					<Button name="ПодарочныеСертификатыПодбор" id="53">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Подбор</CommandName>
+						<ExtendedTooltip name="ПодарочныеСертификатыПодборРасширеннаяПодсказка" id="54"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
 			<ExtendedTooltip name="ПодарочныеСертификатыРасширеннаяПодсказка" id="16"/>
 			<SearchStringAddition name="ПодарочныеСертификатыСтрокаПоиска" id="17">
 				<AdditionSource>
@@ -244,6 +258,23 @@
 			</Type>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="Подбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подбор</Action>
+		</Command>
+	</Commands>
 	<CommandInterface>
 		<NavigationPanel>
 			<Item>

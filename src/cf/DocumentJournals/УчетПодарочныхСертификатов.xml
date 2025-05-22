@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<DocumentJournal uuid="54d340a7-89ad-4913-b5cd-52d1d8dc264e">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentJournalSelection.УчетПодарочныхСертификатов" category="Selection">
+				<xr:TypeId>5aca9e1e-4e50-4fbf-849d-754ef354e6f9</xr:TypeId>
+				<xr:ValueId>178b17ce-04c6-42cf-ad62-dc66992216b0</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalList.УчетПодарочныхСертификатов" category="List">
+				<xr:TypeId>75a4bb2c-8d97-457c-82f7-6b563e3a1bf8</xr:TypeId>
+				<xr:ValueId>fa0d6347-f9a2-45a7-a9d2-c328105074c7</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentJournalManager.УчетПодарочныхСертификатов" category="Manager">
+				<xr:TypeId>27f8f21e-07b8-40a2-9ab1-4d7fdeb8fcd8</xr:TypeId>
+				<xr:ValueId>0114fa96-b7db-4972-9cfc-39f103e51e80</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>УчетПодарочныхСертификатов</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет подарочных сертификатов</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<DefaultForm/>
+			<AuxiliaryForm/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<RegisteredDocuments>
+				<xr:Item xsi:type="xr:MDObjectRef">Document._ДемоРеализацияТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ВводОстатковПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ВыпускПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.РеализацияПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ВозвратПодарочныхСертификатов</xr:Item>
+			</RegisteredDocuments>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects/>
+	</DocumentJournal>
+</MetaDataObject>

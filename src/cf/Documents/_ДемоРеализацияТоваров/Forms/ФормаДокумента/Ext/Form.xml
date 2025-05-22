@@ -517,6 +517,7 @@
 							<v8:content>Группа оплата подарочными сертификатами</v8:content>
 						</v8:item>
 					</ToolTip>
+					<TitleDataPath>Объект.ОплатаПодарочнымиСертификатами.RowsCount</TitleDataPath>
 					<ExtendedTooltip name="ГруппаОплатаПодарочнымиСертификатамиРасширеннаяПодсказка" id="372"/>
 					<ChildItems>
 						<Table name="ОплатаПодарочнымиСертификатами" id="373">
@@ -527,7 +528,15 @@
 							<DataPath>Объект.ОплатаПодарочнымиСертификатами</DataPath>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ОплатаПодарочнымиСертификатамиКонтекстноеМеню" id="374"/>
-							<AutoCommandBar name="ОплатаПодарочнымиСертификатамиКоманднаяПанель" id="375"/>
+							<AutoCommandBar name="ОплатаПодарочнымиСертификатамиКоманднаяПанель" id="375">
+								<ChildItems>
+									<Button name="ОплатаПодарочнымиСертификатамиПодбор" id="403">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Подбор</CommandName>
+										<ExtendedTooltip name="ОплатаПодарочнымиСертификатамиПодборРасширеннаяПодсказка" id="404"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
 							<ExtendedTooltip name="ОплатаПодарочнымиСертификатамиРасширеннаяПодсказка" id="376"/>
 							<SearchStringAddition name="ОплатаПодарочнымиСертификатамиСтрокаПоиска" id="377">
 								<AdditionSource>
@@ -553,6 +562,9 @@
 								<ContextMenu name="ОплатаПодарочнымиСертификатамиУправлениеПоискомКонтекстноеМеню" id="384"/>
 								<ExtendedTooltip name="ОплатаПодарочнымиСертификатамиУправлениеПоискомРасширеннаяПодсказка" id="385"/>
 							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">ОплатаПодарочнымиСертификатамиПриИзменении</Event>
+							</Events>
 							<ChildItems>
 								<LabelField name="ОплатаПодарочнымиСертификатамиНомерСтроки" id="386">
 									<DataPath>Объект.ОплатаПодарочнымиСертификатами.LineNumber</DataPath>
@@ -571,14 +583,40 @@
 										<Event name="StartChoice">ОплатаПодарочнымиСертификатамиПодарочныйСертификатНачалоВыбора</Event>
 									</Events>
 								</InputField>
-								<InputField name="ОплатаПодарочнымиСертификатамиСуммаОплаты" id="392">
-									<DataPath>Объект.ОплатаПодарочнымиСертификатами.СуммаОплаты</DataPath>
-									<EditMode>EnterOnInput</EditMode>
-									<FooterDataPath>Объект.ОплатаПодарочнымиСертификатами.TotalСуммаОплаты</FooterDataPath>
-									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-									<ContextMenu name="ОплатаПодарочнымиСертификатамиСуммаОплатыКонтекстноеМеню" id="393"/>
-									<ExtendedTooltip name="ОплатаПодарочнымиСертификатамиСуммаОплатыРасширеннаяПодсказка" id="394"/>
-								</InputField>
+								<ColumnGroup name="ОплатаПодарочнымиСертификатамиГруппаСумма" id="401">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплата подарочными сертификатами группа сумма</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплата подарочными сертификатами группа сумма</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ОплатаПодарочнымиСертификатамиГруппаСуммаРасширеннаяПодсказка" id="402"/>
+									<ChildItems>
+										<InputField name="ОплатаПодарочнымиСертификатамиСуммаОплаты" id="392">
+											<DataPath>Объект.ОплатаПодарочнымиСертификатами.СуммаОплаты</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ОплатаПодарочнымиСертификатамиСуммаОплатыКонтекстноеМеню" id="393"/>
+											<ExtendedTooltip name="ОплатаПодарочнымиСертификатамиСуммаОплатыРасширеннаяПодсказка" id="394"/>
+										</InputField>
+										<InputField name="ОплатаПодарочнымиСертификатамиВалюта" id="398">
+											<DataPath>Объект.ОплатаПодарочнымиСертификатами.Валюта</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ОплатаПодарочнымиСертификатамиВалютаКонтекстноеМеню" id="399"/>
+											<ExtendedTooltip name="ОплатаПодарочнымиСертификатамиВалютаРасширеннаяПодсказка" id="400"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -623,6 +661,19 @@
 				<Field>Объект.RegisterRecords</Field>
 			</UseAlways>
 			<Columns>
+				<AdditionalColumns table="Объект.ОплатаПодарочнымиСертификатами">
+					<Column name="Валюта" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валюта</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
 				<AdditionalColumns table="Объект.СчетаНаОплату">
 					<Column name="Отступ" id="1">
 						<Title>
@@ -703,6 +754,21 @@
 			</Picture>
 			<Action>СкопироватьСтроки</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Подбор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подбор</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

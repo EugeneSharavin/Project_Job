@@ -31,7 +31,7 @@
 					<v8:content>Ввод остатков подарочных сертификатов</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment/>
+			<Comment>Добавил Шаравин Евгений 18.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
 			<UseStandardCommands>true</UseStandardCommands>
 			<Numerator/>
 			<NumberType>String</NumberType>
@@ -279,6 +279,11 @@
 							<Comment/>
 							<Type>
 								<v8:Type>cfg:CatalogRef.ПодарочныеСертификаты</v8:Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>20</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
 							</Type>
 							<PasswordMode>false</PasswordMode>
 							<Format/>

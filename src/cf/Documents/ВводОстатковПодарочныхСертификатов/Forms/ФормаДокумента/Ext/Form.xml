@@ -38,6 +38,12 @@
 				</InputField>
 				<InputField name="Дата" id="4">
 					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>от</v8:content>
+						</v8:item>
+					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
@@ -88,6 +94,49 @@
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
+		<RadioButtonField name="СпособВводаПодарочногоСертификата" id="69">
+			<DataPath>СпособВводаПодарочногоСертификата</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подарочные сертификаты вводить</v8:content>
+				</v8:item>
+			</Title>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Строкой (по номеру)</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">Строкой (по номеру)</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выбором существующего</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:string">Выбором существующего</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="СпособВводаПодарочногоСертификатаКонтекстноеМеню" id="70"/>
+			<ExtendedTooltip name="СпособВводаПодарочногоСертификатаРасширеннаяПодсказка" id="71"/>
+			<Events>
+				<Event name="OnChange">СпособВводаПодарочногоСертификатаПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
 		<Table name="ПодарочныеСертификаты" id="10">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -96,7 +145,15 @@
 			<DataPath>Объект.ПодарочныеСертификаты</DataPath>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="ПодарочныеСертификатыКонтекстноеМеню" id="11"/>
-			<AutoCommandBar name="ПодарочныеСертификатыКоманднаяПанель" id="12"/>
+			<AutoCommandBar name="ПодарочныеСертификатыКоманднаяПанель" id="12">
+				<ChildItems>
+					<Button name="ПодарочныеСертификатыПодбор" id="72">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Подбор</CommandName>
+						<ExtendedTooltip name="ПодарочныеСертификатыПодборРасширеннаяПодсказка" id="73"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
 			<ExtendedTooltip name="ПодарочныеСертификатыРасширеннаяПодсказка" id="13"/>
 			<SearchStringAddition name="ПодарочныеСертификатыСтрокаПоиска" id="14">
 				<AdditionSource>
@@ -333,6 +390,21 @@
 				<v8:Type>cfg:EnumRef.СтатусыПодарочныхСертификатов</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="СпособВводаПодарочногоСертификата" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ ввода подарочного сертификата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -431,6 +503,23 @@
 			</dcsset:item>
 		</ConditionalAppearance>
 	</Attributes>
+	<Commands>
+		<Command name="Подбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подбор</Action>
+		</Command>
+	</Commands>
 	<CommandInterface>
 		<NavigationPanel>
 			<Item>
