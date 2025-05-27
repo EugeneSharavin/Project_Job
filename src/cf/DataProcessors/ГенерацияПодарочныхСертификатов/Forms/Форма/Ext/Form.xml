@@ -194,6 +194,13 @@
 				<Event name="OnChange">КонтрольУникальностиНомеровПриИзменении</Event>
 			</Events>
 		</RadioButtonField>
+		<Button name="ВвестиМаксимальноеКоличествоПодарочныхСертификатовВДокументе" id="57">
+			<Type>Hyperlink</Type>
+			<Width>52</Width>
+			<CommandName>Form.Command.ВвестиМаксимальноеКоличествоПодарочныхСертификатовВДокументеВыпуска</CommandName>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ExtendedTooltip name="ВвестиМаксимальноеКоличествоПодарочныхСертификатовВДокументеРасширеннаяПодсказка" id="58"/>
+		</Button>
 		<Table name="ПодарочныеСертификаты" id="4">
 			<Representation>List</Representation>
 			<ChangeRowSet>false</ChangeRowSet>
@@ -306,6 +313,38 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
+		<Attribute name="РазрядностьНомераСтрокиТабличнойЧасти" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрядность номера строки табличной части</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МаксимальноеКоличествоПодарочныхСертификатовВДокументеВыпуска" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Максимальное количество подарочных сертификатов в документе выпуска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СгенерироватьПодарочныеСертификаты" id="1">
@@ -342,6 +381,21 @@
 			</Picture>
 			<Action>ОбновитьСписокСертификатов</Action>
 			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ВвестиМаксимальноеКоличествоПодарочныхСертификатовВДокументеВыпуска" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Максимальное количество подарочных сертификатов в документе выпуска:</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Максимальное количество подарочных сертификатов (строк) в одном документе выпуска, не рекомендуется устанавливать слишком большим (более 1000)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВвестиМаксимальноеКоличествоПодарочныхСертификатовВДокументеВыпуска</Action>
 		</Command>
 	</Commands>
 </Form>

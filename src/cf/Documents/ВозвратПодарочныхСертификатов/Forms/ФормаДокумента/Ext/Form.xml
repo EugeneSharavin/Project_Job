@@ -116,16 +116,18 @@
 				</InputField>
 				<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелец" id="36">
 					<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Вид подарочного сертификата</v8:content>
-						</v8:item>
-					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатВладелецКонтекстноеМеню" id="37"/>
 					<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатВладелецРасширеннаяПодсказка" id="38"/>
 				</LabelField>
+				<InputField name="ПодарочныеСертификатыСтатус" id="63">
+					<DataPath>Объект.ПодарочныеСертификаты.Статус</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПодарочныеСертификатыСтатусКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыСтатусРасширеннаяПодсказка" id="65"/>
+				</InputField>
 				<ColumnGroup name="ПодарочныеСертификатыГруппаНоминальнаяСтоимость" id="45">
 					<Title>
 						<v8:item>
@@ -157,29 +159,29 @@
 						</LabelField>
 					</ChildItems>
 				</ColumnGroup>
-				<ColumnGroup name="ПодарочныеСертификатыГруппаГруппаНеиспользованныйОстатокСтоимости" id="53">
+				<ColumnGroup name="ПодарочныеСертификатыГруппаОстатокСуммы" id="53">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Подарочные сертификаты группа группа неиспользованный остаток стоимости</v8:content>
+							<v8:content>Подарочные сертификаты группа остаток суммы</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Подарочные сертификаты группа группа неиспользованный остаток стоимости</v8:content>
+							<v8:content>Подарочные сертификаты группа остаток суммы</v8:content>
 						</v8:item>
 					</ToolTip>
 					<Group>InCell</Group>
-					<ExtendedTooltip name="ПодарочныеСертификатыГруппаГруппаНеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="54"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыГруппаОстатокСуммыРасширеннаяПодсказка" id="54"/>
 					<ChildItems>
-						<InputField name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимости" id="55">
-							<DataPath>Объект.ПодарочныеСертификаты.НеиспользованныйОстатокСтоимости</DataPath>
+						<InputField name="ПодарочныеСертификатыОстатокСуммы" id="55">
+							<DataPath>Объект.ПодарочныеСертификаты.ОстатокСуммы</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<EditMode>EnterOnInput</EditMode>
 							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимостиКонтекстноеМеню" id="56"/>
-							<ExtendedTooltip name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="57"/>
+							<ContextMenu name="ПодарочныеСертификатыОстатокСуммыКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="ПодарочныеСертификатыОстатокСуммыРасширеннаяПодсказка" id="57"/>
 						</InputField>
 						<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалюта1" id="58">
 							<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner.Валюта</DataPath>
@@ -190,16 +192,26 @@
 						</LabelField>
 					</ChildItems>
 				</ColumnGroup>
+				<InputField name="ПодарочныеСертификатыДействуетДо" id="66">
+					<DataPath>Объект.ПодарочныеСертификаты.ДействуетДо</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПодарочныеСертификатыДействуетДоКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыДействуетДоРасширеннаяПодсказка" id="68"/>
+				</InputField>
 			</ChildItems>
 		</Table>
-		<LabelField name="ИтогоСтоимость" id="50">
-			<DataPath>ИтогоСтоимость</DataPath>
+		<LabelField name="ИтоговыеСуммы" id="50">
+			<DataPath>ИтоговыеСуммы</DataPath>
 			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<TitleLocation>None</TitleLocation>
+			<HorizontalAlign>Right</HorizontalAlign>
 			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-			<HorizontalStretch>false</HorizontalStretch>
+			<Width>100</Width>
 			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
-			<ContextMenu name="ИтогоСтоимостьКонтекстноеМеню" id="51"/>
-			<ExtendedTooltip name="ИтогоСтоимостьРасширеннаяПодсказка" id="52"/>
+			<ContextMenu name="ИтоговыеСуммыКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ИтоговыеСуммыРасширеннаяПодсказка" id="52"/>
 		</LabelField>
 		<UsualGroup name="ГруппаКомментарийОтветственный" id="34">
 			<Title>
@@ -250,7 +262,29 @@
 			</UseAlways>
 			<Columns>
 				<AdditionalColumns table="Объект.ПодарочныеСертификаты">
-					<Column name="ДействуетДо" id="1">
+					<Column name="Статус" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Статус</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.СтатусыПодарочныхСертификатов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ОстатокСуммы" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Остаток неиспользованной стоимости</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ДенежнаяСуммаНеотрицательная</v8:TypeSet>
+						</Type>
+					</Column>
+					<Column name="ДействуетДо" id="5">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
@@ -264,25 +298,14 @@
 							</v8:DateQualifiers>
 						</Type>
 					</Column>
-					<Column name="НеиспользованныйОстатокСтоимости" id="2">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Неиспользованный остаток стоимости</v8:content>
-							</v8:item>
-						</Title>
-						<Type>
-							<v8:TypeSet>cfg:DefinedType.ДенежнаяСуммаНеотрицательная</v8:TypeSet>
-						</Type>
-					</Column>
 				</AdditionalColumns>
 			</Columns>
 		</Attribute>
-		<Attribute name="ИтогоСтоимость" id="2">
+		<Attribute name="ИтоговыеСуммы" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Итого стоимость</v8:content>
+					<v8:content>Итоговые суммы</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

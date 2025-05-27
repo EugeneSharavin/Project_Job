@@ -116,12 +116,6 @@
 				</InputField>
 				<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелец" id="36">
 					<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Вид подарочного сертификата</v8:content>
-						</v8:item>
-					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатВладелецКонтекстноеМеню" id="37"/>
 					<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатВладелецРасширеннаяПодсказка" id="38"/>
@@ -167,14 +161,16 @@
 				</InputField>
 			</ChildItems>
 		</Table>
-		<LabelField name="ИтогоСтоимость" id="50">
-			<DataPath>ИтогоСтоимость</DataPath>
+		<LabelField name="ИтоговаяСтоимость" id="50">
+			<DataPath>ИтоговаяСтоимость</DataPath>
 			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<TitleLocation>None</TitleLocation>
+			<HorizontalAlign>Right</HorizontalAlign>
 			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-			<HorizontalStretch>false</HorizontalStretch>
+			<Width>100</Width>
 			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
-			<ContextMenu name="ИтогоСтоимостьКонтекстноеМеню" id="51"/>
-			<ExtendedTooltip name="ИтогоСтоимостьРасширеннаяПодсказка" id="52"/>
+			<ContextMenu name="ИтоговаяСтоимостьКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ИтоговаяСтоимостьРасширеннаяПодсказка" id="52"/>
 		</LabelField>
 		<UsualGroup name="ГруппаКомментарийОтветственный" id="34">
 			<Title>
@@ -242,11 +238,11 @@
 				</AdditionalColumns>
 			</Columns>
 		</Attribute>
-		<Attribute name="ИтогоСтоимость" id="2">
+		<Attribute name="ИтоговаяСтоимость" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Итого стоимость</v8:content>
+					<v8:content>Итоговая стоимость</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

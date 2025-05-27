@@ -32,12 +32,13 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.СостояниеПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ВозвратПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.КонтролироватьУникальностьНомеровПодарочныхСертификатовПоВсемВидам</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.ИсторияОперацийПоПодарочнымСертификатам</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ИсторияОперацийСПодарочнымиСертификатами</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ВыпускПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DocumentJournal.УчетПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.АннулированиеПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Role.ИспользованиеПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ПодарочныеСертификатыКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.МаксимальноеКоличествоПодарочныхСертификатовВДокументеВыпуска</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

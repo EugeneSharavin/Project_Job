@@ -1,0 +1,59 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Архитектура ИС
+
+' Системы
+System_Boundary(1C_SSL, "Головной офис - 1C БСП ред. 3.1"){
+    Container(Gift_Cert, "Модуль 'Учет подарочных сертификатов'", "")
+}
+
+System(Messaging_Broker, "Брокер обмена сообщениями Kafka")
+
+System(1C_SSL_Filial_1, "Региональный офис - 1C: БСП ред. 3"){
+    Container(Gift_Cert_Filial_1, "Модуль 'Учет подарочных сертификатов'", "")
+}
+
+System(1C_SSL_Filial_2, "Региональный офис - 1C: БСП ред. 3"){
+    Container(Gift_Cert_Filial_2, "Модуль 'Учет подарочных сертификатов'", "")
+}
+
+System(1C_SSL_Filial_3, "Региональный офис - 1C: БСП ред. 3"){
+    Container(Gift_Cert_Filial_3, "Модуль 'Учет подарочных сертификатов'", "")
+}
+
+System(1C_SSL_Filial_4, "Региональный офис - 1C: БСП ред. 3"){
+    Container(Gift_Cert_Filial_4, "Модуль 'Учет подарочных сертификатов'", "")
+} 
+
+System(1C_ACC, "1C: Бухгалтерия ред. 3"){
+    Container(Web_Service, "Web-сервис", "")
+}
+
+System_Ext(Web_Store, "Интернет-магазин (1C-Битрикс)")
+
+'Lay_L(1C_SSL, Web_Store)
+'Lay_R(1C_SSL, 1C_ACC)
+ 
+' Связи
+Rel_L(Gift_Cert, Web_Store, "2. Подарочные сертификаты", "https")
+Rel_R(Web_Store, Gift_Cert, "2. Данные о продажах и возвратах", "https")
+
+Rel_R(Gift_Cert, Web_Service, "3. Подарочные сертификаты, история операций", "")
+
+Rel_D(Gift_Cert, Messaging_Broker, "1. Подарочные сертификаты, история операций")
+Rel_U(Messaging_Broker, Gift_Cert, "")
+
+Rel_D(Messaging_Broker, Gift_Cert_Filial_1, "1. Подарочные сертификаты, история операций")
+Rel_U(Gift_Cert_Filial_1, Messaging_Broker, "")
+
+Rel_D(Messaging_Broker, Gift_Cert_Filial_2, "1. Подарочные сертификаты, история операций")
+Rel_U(Gift_Cert_Filial_2, Messaging_Broker, "")
+
+Rel_D(Messaging_Broker, Gift_Cert_Filial_3, "1. Подарочные сертификаты, история операций")
+Rel_U(Gift_Cert_Filial_3, Messaging_Broker, "")
+
+Rel_D(Messaging_Broker, Gift_Cert_Filial_4, "1. Подарочные сертификаты, история операций")
+Rel_U(Gift_Cert_Filial_4, Messaging_Broker, "")
+@enduml

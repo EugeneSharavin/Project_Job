@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Report uuid="e18d2de0-0722-43a1-b534-524fa8854abd">
+		<InternalInfo>
+			<xr:GeneratedType name="ReportObject.ИсторияОперацийСПодарочнымиСертификатами" category="Object">
+				<xr:TypeId>b7fba18f-63de-4c5b-a7d2-f595f94b3db0</xr:TypeId>
+				<xr:ValueId>1f6ad28a-b594-4f15-864a-8e0c52bfbf54</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ReportManager.ИсторияОперацийСПодарочнымиСертификатами" category="Manager">
+				<xr:TypeId>3a590eb0-7973-4836-b44f-d13458277f4d</xr:TypeId>
+				<xr:ValueId>079d5652-c619-42d6-adb5-bc503e781f23</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ИсторияОперацийСПодарочнымиСертификатами</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История операций с подарочными сертификатами</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Добавил Шаравин Евгений 19.05.2025 по проектной работе курса "Архитектор 1С" (УЦ ОТУС)</Comment>
+			<UseStandardCommands>true</UseStandardCommands>
+			<DefaultForm/>
+			<AuxiliaryForm/>
+			<MainDataCompositionSchema>Report.ИсторияОперацийСПодарочнымиСертификатами.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<DefaultSettingsForm/>
+			<AuxiliarySettingsForm/>
+			<DefaultVariantForm/>
+			<VariantsStorage/>
+			<SettingsStorage/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
+		</ChildObjects>
+	</Report>
+</MetaDataObject>

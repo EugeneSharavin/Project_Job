@@ -9,6 +9,18 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ПодарочныйСертификат</dataPath>
 			<field>ПодарочныйСертификат</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.Владелец</dcscor:choiceParameter>
+							<dcscor:value>Вид</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СрокДействия</dataPath>
@@ -63,18 +75,18 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ВидПодарочногоСертификата</dataPath>
-			<field>ВидПодарочногоСертификата</field>
+			<dataPath>Вид</dataPath>
+			<field>Вид</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Вид подарочного сертификата</v8:content>
+					<v8:content>Вид</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ВидыПодарочныхСертификатов.Ссылка КАК ВидПодарочногоСертификата,
+	ВидыПодарочныхСертификатов.Ссылка КАК Вид,
 	ПодарочныеСертификаты.Ссылка КАК ПодарочныйСертификат,
 	ПодарочныеСертификаты.Код КАК НомерСертификата,
 	ВидыПодарочныхСертификатов.НоминальнаяСтоимость КАК НоминальнаяСтоимость,

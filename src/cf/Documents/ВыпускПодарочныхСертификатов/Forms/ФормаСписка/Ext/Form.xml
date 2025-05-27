@@ -81,6 +81,11 @@
 					<ContextMenu name="НомерКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="21"/>
 				</LabelField>
+				<LabelField name="ВидПодарочныхСертификатов" id="36">
+					<DataPath>Список.ВидПодарочныхСертификатов</DataPath>
+					<ContextMenu name="ВидПодарочныхСертификатовКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ВидПодарочныхСертификатовРасширеннаяПодсказка" id="38"/>
+				</LabelField>
 				<LabelField name="Ответственный" id="22">
 					<DataPath>Список.Ответственный</DataPath>
 					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="23"/>

@@ -107,6 +107,7 @@
 					<ChildItems>
 						<LabelField name="Стоимость" id="28">
 							<DataPath>Список.Стоимость</DataPath>
+							<HorizontalAlign>Right</HorizontalAlign>
 							<ContextMenu name="СтоимостьКонтекстноеМеню" id="29"/>
 							<ExtendedTooltip name="СтоимостьРасширеннаяПодсказка" id="30"/>
 						</LabelField>

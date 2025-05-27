@@ -33,12 +33,73 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ВыпускПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.РеализацияПодарочныхСертификатов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ВозвратПодарочныхСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.АннулированиеПодарочныхСертификатов</xr:Item>
 			</RegisteredDocuments>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<ListPresentation/>
 			<ExtendedListPresentation/>
 			<Explanation/>
 		</Properties>
-		<ChildObjects/>
+		<ChildObjects>
+			<Column uuid="6ff20011-9dd5-42c9-a476-4471b2070e6a">
+				<Properties>
+					<Name>ВидПодарочныхСертификатов</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид подарочных сертификатов</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВводОстатковПодарочныхСертификатов.Attribute.ВидПодарочныхСертификатов</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВыпускПодарочныхСертификатов.Attribute.ВидПодарочныхСертификатов</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.АннулированиеПодарочныхСертификатов.Attribute.ВидПодарочныхСертификатов</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="577f05a3-1263-4495-a403-800c6148dd41">
+				<Properties>
+					<Name>Ответственный</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственный</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document._ДемоРеализацияТоваров.Attribute.Ответственный</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВводОстатковПодарочныхСертификатов.Attribute.Ответственный</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВыпускПодарочныхСертификатов.Attribute.Ответственный</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВозвратПодарочныхСертификатов.Attribute.Ответственный</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.АннулированиеПодарочныхСертификатов.Attribute.Ответственный</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+			<Column uuid="2bd1cfe6-f28f-4890-9ef1-a12549dd8953">
+				<Properties>
+					<Name>Комментарий</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Indexing>DontIndex</Indexing>
+					<References>
+						<xr:Item xsi:type="xr:MDObjectRef">Document._ДемоРеализацияТоваров.Attribute.Комментарий</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВводОстатковПодарочныхСертификатов.Attribute.Комментарий</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВыпускПодарочныхСертификатов.Attribute.Комментарий</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.РеализацияПодарочныхСертификатов.Attribute.Комментарий</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.ВозвратПодарочныхСертификатов.Attribute.Комментарий</xr:Item>
+						<xr:Item xsi:type="xr:MDObjectRef">Document.АннулированиеПодарочныхСертификатов.Attribute.Комментарий</xr:Item>
+					</References>
+				</Properties>
+			</Column>
+		</ChildObjects>
 	</DocumentJournal>
 </MetaDataObject>

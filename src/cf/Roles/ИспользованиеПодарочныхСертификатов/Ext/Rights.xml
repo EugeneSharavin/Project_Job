@@ -659,7 +659,7 @@
 		</right>
 	</object>
 	<object>
-		<name>Report.ИсторияОперацийПоПодарочнымСертификатам</name>
+		<name>Report.ИсторияОперацийСПодарочнымиСертификатами</name>
 		<right>
 			<name>Use</name>
 			<value>true</value>

@@ -51,15 +51,74 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<InputField name="ВидПодарочныхСертификатов" id="61">
-			<DataPath>Объект.ВидПодарочныхСертификатов</DataPath>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ВидПодарочныхСертификатовКонтекстноеМеню" id="62"/>
-			<ExtendedTooltip name="ВидПодарочныхСертификатовРасширеннаяПодсказка" id="63"/>
-			<Events>
-				<Event name="ChoiceProcessing">ВидПодарочныхСертификатовОбработкаВыбора</Event>
-			</Events>
-		</InputField>
+		<UsualGroup name="ГруппаВариантАннулированияПодарочныхСертификатов" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вариант аннулирования подарочных сертификатов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вариант аннулирования подарочных сертификатов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВариантАннулированияПодарочныхСертификатовРасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<RadioButtonField name="ВариантАннулированияПодарочныхСертификатов" id="68">
+					<DataPath>ВариантАннулированияПодарочныхСертификатов</DataPath>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>всех видов</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">всех видов</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>выбранного вида</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">выбранного вида</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ВариантАннулированияПодарочныхСертификатовКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ВариантАннулированияПодарочныхСертификатовРасширеннаяПодсказка" id="70"/>
+					<Events>
+						<Event name="OnChange">ВариантАннулированияПодарочныхСертификатовПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="ВидПодарочныхСертификатов" id="61">
+					<DataPath>Объект.ВидПодарочныхСертификатов</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ВидПодарочныхСертификатовКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="ВидПодарочныхСертификатовРасширеннаяПодсказка" id="63"/>
+					<Events>
+						<Event name="OnChange">ВидПодарочныхСертификатовПриИзменении</Event>
+						<Event name="ChoiceProcessing">ВидПодарочныхСертификатовОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="ПодарочныеСертификаты" id="13">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -103,6 +162,7 @@
 				<ExtendedTooltip name="ПодарочныеСертификатыУправлениеПоискомРасширеннаяПодсказка" id="25"/>
 			</SearchControlAddition>
 			<Events>
+				<Event name="BeforeAddRow">ПодарочныеСертификатыПередНачаломДобавления</Event>
 				<Event name="OnChange">ПодарочныеСертификатыПриИзменении</Event>
 			</Events>
 			<ChildItems>
@@ -125,16 +185,18 @@
 				</InputField>
 				<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелец" id="36">
 					<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Вид подарочного сертификата</v8:content>
-						</v8:item>
-					</Title>
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПодарочныеСертификатыПодарочныйСертификатВладелецКонтекстноеМеню" id="37"/>
 					<ExtendedTooltip name="ПодарочныеСертификатыПодарочныйСертификатВладелецРасширеннаяПодсказка" id="38"/>
 				</LabelField>
+				<InputField name="ПодарочныеСертификатыСтатус" id="71">
+					<DataPath>Объект.ПодарочныеСертификаты.Статус</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПодарочныеСертификатыСтатусКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыСтатусРасширеннаяПодсказка" id="73"/>
+				</InputField>
 				<ColumnGroup name="ПодарочныеСертификатыГруппаНоминальнаяСтоимость" id="45">
 					<Title>
 						<v8:item>
@@ -166,24 +228,24 @@
 						</LabelField>
 					</ChildItems>
 				</ColumnGroup>
-				<ColumnGroup name="ПодарочныеСертификатыГруппаГруппаНеиспользованныйОстатокСтоимости" id="53">
+				<ColumnGroup name="ПодарочныеСертификатыГруппаОстатокСуммы" id="53">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Подарочные сертификаты группа группа неиспользованный остаток стоимости</v8:content>
+							<v8:content>Подарочные сертификаты группа остаток суммы</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Подарочные сертификаты группа группа неиспользованный остаток стоимости</v8:content>
+							<v8:content>Подарочные сертификаты группа остаток суммы</v8:content>
 						</v8:item>
 					</ToolTip>
 					<Group>InCell</Group>
-					<ExtendedTooltip name="ПодарочныеСертификатыГруппаГруппаНеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="54"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыГруппаОстатокСуммыРасширеннаяПодсказка" id="54"/>
 					<ChildItems>
-						<InputField name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимости" id="55">
-							<DataPath>Объект.ПодарочныеСертификаты.НеиспользованныйОстатокСтоимости</DataPath>
+						<InputField name="ПодарочныеСертификатыОстатокСуммы" id="55">
+							<DataPath>Объект.ПодарочныеСертификаты.ОстатокСуммы</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<EditMode>EnterOnInput</EditMode>
 							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
@@ -199,8 +261,8 @@
 									<v8:content>ЧН=0,00</v8:content>
 								</v8:item>
 							</EditFormat>
-							<ContextMenu name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимостиКонтекстноеМеню" id="56"/>
-							<ExtendedTooltip name="ПодарочныеСертификатыНеиспользованныйОстатокСтоимостиРасширеннаяПодсказка" id="57"/>
+							<ContextMenu name="ПодарочныеСертификатыОстатокСуммыКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="ПодарочныеСертификатыОстатокСуммыРасширеннаяПодсказка" id="57"/>
 						</InputField>
 						<LabelField name="ПодарочныеСертификатыПодарочныйСертификатВладелецВалюта1" id="58">
 							<DataPath>Объект.ПодарочныеСертификаты.ПодарочныйСертификат.Owner.Валюта</DataPath>
@@ -211,16 +273,26 @@
 						</LabelField>
 					</ChildItems>
 				</ColumnGroup>
+				<InputField name="ПодарочныеСертификатыДействуетДо" id="74">
+					<DataPath>Объект.ПодарочныеСертификаты.ДействуетДо</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПодарочныеСертификатыДействуетДоКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="ПодарочныеСертификатыДействуетДоРасширеннаяПодсказка" id="76"/>
+				</InputField>
 			</ChildItems>
 		</Table>
-		<LabelField name="ИтогоСтоимость" id="50">
-			<DataPath>ИтогоСтоимость</DataPath>
+		<LabelField name="ИтоговыеСуммы" id="50">
+			<DataPath>ИтоговыеСуммы</DataPath>
 			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<TitleLocation>None</TitleLocation>
+			<HorizontalAlign>Right</HorizontalAlign>
 			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-			<HorizontalStretch>false</HorizontalStretch>
+			<Width>100</Width>
 			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
-			<ContextMenu name="ИтогоСтоимостьКонтекстноеМеню" id="51"/>
-			<ExtendedTooltip name="ИтогоСтоимостьРасширеннаяПодсказка" id="52"/>
+			<ContextMenu name="ИтоговыеСуммыКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ИтоговыеСуммыРасширеннаяПодсказка" id="52"/>
 		</LabelField>
 		<UsualGroup name="ГруппаКомментарийОтветственный" id="34">
 			<Title>
@@ -271,7 +343,29 @@
 			</UseAlways>
 			<Columns>
 				<AdditionalColumns table="Объект.ПодарочныеСертификаты">
-					<Column name="ДействуетДо" id="1">
+					<Column name="Статус" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Статус</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.СтатусыПодарочныхСертификатов</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ОстатокСуммы" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Остаток неиспользованной стоимости</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:TypeSet>cfg:DefinedType.ДенежнаяСуммаНеотрицательная</v8:TypeSet>
+						</Type>
+					</Column>
+					<Column name="ДействуетДо" id="5">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
@@ -285,25 +379,14 @@
 							</v8:DateQualifiers>
 						</Type>
 					</Column>
-					<Column name="НеиспользованныйОстатокСтоимости" id="2">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Неиспользованный остаток стоимости</v8:content>
-							</v8:item>
-						</Title>
-						<Type>
-							<v8:TypeSet>cfg:DefinedType.ДенежнаяСуммаНеотрицательная</v8:TypeSet>
-						</Type>
-					</Column>
 				</AdditionalColumns>
 			</Columns>
 		</Attribute>
-		<Attribute name="ИтогоСтоимость" id="2">
+		<Attribute name="ИтоговыеСуммы" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Итого стоимость</v8:content>
+					<v8:content>Итоговые суммы</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -334,6 +417,33 @@
 			</Title>
 			<Type>
 				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантАннулированияПодарочныхСертификатов" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аннулировать подарочные сертификаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ВидПодарочныхСертификатов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид подарочных сертификатов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВидыПодарочныхСертификатов</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
