@@ -191,7 +191,7 @@
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
 					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">ВидПодарочногоСертификата</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Вид</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:userSettingID>85a2c1f1-050e-4ac4-988e-f6e98663be69</dcsset:userSettingID>
 				</dcsset:item>
@@ -271,7 +271,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ВидПодарочногоСертификата</dcsset:field>
+							<dcsset:field>Вид</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

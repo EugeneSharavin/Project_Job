@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Subsystem uuid="da211e02-cc84-46f3-8aef-b638187d0a57">
+		<Properties>
+			<Name>RMQ_ОбменЧерезБрокер</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обмен через брокер (RabbitMQ)</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>true</IncludeInCommandInterface>
+			<UseOneCommand>false</UseOneCommand>
+			<Explanation/>
+			<Picture>
+				<xr:Ref>CommonPicture.RabbitMQ</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.RMQ_НастройкиМаршрутизации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.RMQ_ТипыТочекОбмена</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.RMQ_ИсходящиеСообщенияОбмена</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.RMQ_ТочкиОбмена</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.RMQ_ВиртуальныеХосты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.RMQ_Очереди</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.RMQ_НастройкиПодключения</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.RMQ_ВыполнитьОбменСообщениями</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОчередьДляЧтенияСообщений</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.RMQ_ОбменСообщениями</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">EventSubscription.ПриЗаписиОбъекта</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RMQ_ОбщегоНазначения</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RMQ_ОбработкаПодписокНаСобытия</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.RMQ_ОбменСообщениями</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.ИспользоватьИнтеграциюСRabbitMQ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ВнешняяКомпонента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.RabbitMQ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.RMQ_ТочкиОбменаДляПубликацииДанных</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

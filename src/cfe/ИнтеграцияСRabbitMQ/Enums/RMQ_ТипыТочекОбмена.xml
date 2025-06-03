@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<Enum uuid="13cddc01-dd95-42f3-ac98-470b8b7e5ea0">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.RMQ_ТипыТочекОбмена" category="Ref">
+				<xr:TypeId>eb0e6c28-a446-4b9a-9046-db65d35cbea7</xr:TypeId>
+				<xr:ValueId>35889955-d954-407c-9396-4d1e14195521</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.RMQ_ТипыТочекОбмена" category="Manager">
+				<xr:TypeId>40652735-0470-407f-b536-0b693c949185</xr:TypeId>
+				<xr:ValueId>91878a07-d71b-42b7-9740-87b111a60ae4</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.RMQ_ТипыТочекОбмена" category="List">
+				<xr:TypeId>ca92b84f-7d8d-481c-a2a8-ab9fb9422d7c</xr:TypeId>
+				<xr:ValueId>470218ce-b853-4e3e-9cca-e05c4ab169f3</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>RMQ_ТипыТочекОбмена</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Типы точек обмена</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="45d2d1ac-fc20-4a9f-90d9-36db3fa315df">
+				<Properties>
+					<Name>Direct</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Direct</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="77601dcb-f815-4af9-8ffd-3505f932466f">
+				<Properties>
+					<Name>Fanout</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Fanout</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="3af4cd8b-bd4c-4085-9cd5-49a17e1e601f">
+				<Properties>
+					<Name>Topic</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Topic</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

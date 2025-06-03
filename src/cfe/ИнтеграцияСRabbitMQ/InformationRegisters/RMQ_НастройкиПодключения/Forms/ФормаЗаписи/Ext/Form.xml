@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="Действует" id="16">
+			<DataPath>Запись.Действует</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ДействуетКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ДействуетРасширеннаяПодсказка" id="18"/>
+			<Events>
+				<Event name="OnChange">ДействуетПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<InputField name="ВиртуальныйХост" id="1">
+			<DataPath>Запись.ВиртуальныйХост</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ВиртуальныйХостКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ВиртуальныйХостРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Адрес" id="4">
+			<DataPath>Запись.Адрес</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="АдресКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="АдресРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Порт" id="7">
+			<DataPath>Запись.Порт</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ПортКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="ИмяПользователя" id="10">
+			<DataPath>Запись.ИмяПользователя</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ИмяПользователяКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ИмяПользователяРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="Пароль" id="13">
+			<DataPath>Запись.Пароль</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ПарольКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="15"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.RMQ_НастройкиПодключения</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>Catalog.RMQ_ВиртуальныеХосты.Command.ПроверитьПодключение</Command>
+				<Type>Added</Type>
+				<Attribute>Запись.ВиртуальныйХост</Attribute>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>
