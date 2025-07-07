@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
-	<Report uuid="e18d2de0-0722-43a1-b534-524fa8854abd">
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Report uuid="f97cd1f9-42ac-43fb-829c-c279ce34908d">
 		<InternalInfo>
 			<xr:GeneratedType name="ReportObject.ИсторияОперацийСПодарочнымиСертификатами" category="Object">
-				<xr:TypeId>b7fba18f-63de-4c5b-a7d2-f595f94b3db0</xr:TypeId>
-				<xr:ValueId>1f6ad28a-b594-4f15-864a-8e0c52bfbf54</xr:ValueId>
+				<xr:TypeId>9be544dd-53b8-4fe2-acc5-a32b58d04b38</xr:TypeId>
+				<xr:ValueId>10c86399-0714-479a-83bb-f7000754394d</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="ReportManager.ИсторияОперацийСПодарочнымиСертификатами" category="Manager">
-				<xr:TypeId>3a590eb0-7973-4836-b44f-d13458277f4d</xr:TypeId>
-				<xr:ValueId>079d5652-c619-42d6-adb5-bc503e781f23</xr:ValueId>
+				<xr:TypeId>2f2c097c-9077-4307-a04c-9e22e85a8546</xr:TypeId>
+				<xr:ValueId>86f5a4db-f96e-4fdb-9fc7-f1ebd3a5db3d</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>

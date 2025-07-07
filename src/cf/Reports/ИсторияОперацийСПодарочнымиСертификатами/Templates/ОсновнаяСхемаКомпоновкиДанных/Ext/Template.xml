@@ -93,15 +93,37 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
+	ИсторияСтатусовПодарочныхСертификатов.ПодарочныйСертификат КАК ПодарочныйСертификат,
+	МАКСИМУМ(ИсторияСтатусовПодарочныхСертификатов.ДействуетДо) КАК ДействуетДо
+ПОМЕСТИТЬ ВТ_СрокиДействияПодарочныхСертификатов
+ИЗ
+	РегистрСведений.ИсторияСтатусовПодарочныхСертификатов КАК ИсторияСтатусовПодарочныхСертификатов
+
+СГРУППИРОВАТЬ ПО
+	ИсторияСтатусовПодарочныхСертификатов.ПодарочныйСертификат
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	ИсторияСтатусовПодарочныхСертификатов.Период КАК Период,
 	ИсторияСтатусовПодарочныхСертификатов.Регистратор КАК Регистратор,
 	ИсторияСтатусовПодарочныхСертификатов.НомерСтроки КАК НомерСтроки,
 	ИсторияСтатусовПодарочныхСертификатов.ПодарочныйСертификат КАК ПодарочныйСертификат,
 	ИсторияСтатусовПодарочныхСертификатов.ПодарочныйСертификат.Код КАК НомерСертификата,
 	ИсторияСтатусовПодарочныхСертификатов.Статус КАК Статус,
-	ИсторияСтатусовПодарочныхСертификатов.ДействуетДо КАК ДействуетДо,
+	ЕСТЬNULL(СрокиДействияПодарочныхСертификатов.ДействуетДо, ДАТАВРЕМЯ(1, 1, 1)) КАК ДействуетДо,
 	ИсторияСтатусовПодарочныхСертификатов.Ответственный КАК Ответственный,
 	ВидыПодарочныхСертификатов.Ссылка КАК Вид,
 	ВидыПодарочныхСертификатов.НоминальнаяСтоимость КАК НоминальнаяСтоимость,
@@ -109,42 +131,119 @@
 	ВидыПодарочныхСертификатов.СрокДействия КАК СрокДействия,
 	ВидыПодарочныхСертификатов.Возвратный КАК Возвратный,
 	ВидыПодарочныхСертификатов.МногократноеИспользование КАК МногократноеИспользование,
-	ВидыПодарочныхСертификатов.Действует КАК Действует
+	ВидыПодарочныхСертификатов.Действует КАК Действует,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(ИсторияСтатусовПодарочныхСертификатов.Регистратор) = ТИП(Документ.ВыпускПодарочныхСертификатов)
+			ТОГДА ВЫРАЗИТЬ(ИсторияСтатусовПодарочныхСертификатов.Регистратор КАК Документ.ВыпускПодарочныхСертификатов).Комментарий
+		КОГДА ТИПЗНАЧЕНИЯ(ИсторияСтатусовПодарочныхСертификатов.Регистратор) = ТИП(Документ.ВводОстатковПодарочныхСертификатов)
+			ТОГДА ВЫРАЗИТЬ(ИсторияСтатусовПодарочныхСертификатов.Регистратор КАК Документ.ВводОстатковПодарочныхСертификатов).Комментарий
+		КОГДА ТИПЗНАЧЕНИЯ(ИсторияСтатусовПодарочныхСертификатов.Регистратор) = ТИП(Документ.РеализацияПодарочныхСертификатов)
+			ТОГДА ВЫРАЗИТЬ(ИсторияСтатусовПодарочныхСертификатов.Регистратор КАК Документ.РеализацияПодарочныхСертификатов).Комментарий
+		КОГДА ТИПЗНАЧЕНИЯ(ИсторияСтатусовПодарочныхСертификатов.Регистратор) = ТИП(Документ._ДемоРеализацияТоваров)
+			ТОГДА ВЫРАЗИТЬ(ИсторияСтатусовПодарочныхСертификатов.Регистратор КАК Документ._ДемоРеализацияТоваров).Комментарий
+		КОГДА ТИПЗНАЧЕНИЯ(ИсторияСтатусовПодарочныхСертификатов.Регистратор) = ТИП(Документ.ВозвратПодарочныхСертификатов)
+			ТОГДА ВЫРАЗИТЬ(ИсторияСтатусовПодарочныхСертификатов.Регистратор КАК Документ.ВозвратПодарочныхСертификатов).Комментарий
+		КОГДА ТИПЗНАЧЕНИЯ(ИсторияСтатусовПодарочныхСертификатов.Регистратор) = ТИП(Документ.АннулированиеПодарочныхСертификатов)
+			ТОГДА ВЫРАЗИТЬ(ИсторияСтатусовПодарочныхСертификатов.Регистратор КАК Документ.АннулированиеПодарочныхСертификатов).Комментарий
+		ИНАЧЕ ""
+	КОНЕЦ КАК Комментарий
 ИЗ
 	РегистрСведений.ИсторияСтатусовПодарочныхСертификатов КАК ИсторияСтатусовПодарочныхСертификатов
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.ВидыПодарочныхСертификатов КАК ВидыПодарочныхСертификатов
-		ПО ИсторияСтатусовПодарочныхСертификатов.ПодарочныйСертификат.Владелец = ВидыПодарочныхСертификатов.Ссылка</query>
+		ПО ИсторияСтатусовПодарочныхСертификатов.ПодарочныйСертификат.Владелец = ВидыПодарочныхСертификатов.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СрокиДействияПодарочныхСертификатов КАК СрокиДействияПодарочныхСертификатов
+		ПО ИсторияСтатусовПодарочныхСертификатов.ПодарочныйСертификат = СрокиДействияПодарочныхСертификатов.ПодарочныйСертификат
+ГДЕ
+	ИсторияСтатусовПодарочныхСертификатов.Период МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания</query>
 	</dataSet>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
 	<settingsVariant>
-		<dcsset:name>ИсторияОперацийПоПодарочнымСертификатам</dcsset:name>
+		<dcsset:name>ИсторияОперацийСПодарочнымиСертификатами</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>История операций по подарочным сертификатам</v8:content>
+				<v8:content>История операций с подарочными сертификатами</v8:content>
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:field>НоминальнаяСтоимость</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:field>Валюта</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:field>Возвратный</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:field>МногократноеИспользование</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:field>СрокДействия</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:field>ДействуетДо</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Статус</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Период</dcsset:field>
@@ -153,7 +252,13 @@
 					<dcsset:field>Регистратор</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Статус</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Ответственный</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Комментарий</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -188,6 +293,15 @@
 					</dcsset:presentation>
 				</dcsset:item>
 			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>c350d03c-1333-4b10-bbc7-1f79d857b38d</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
 					<dcsset:field>Период</dcsset:field>
@@ -211,6 +325,17 @@
 					</dcsset:appearance>
 				</dcsset:item>
 			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
@@ -231,6 +356,48 @@
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
 							<dcsset:field>ПодарочныйСертификат</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>НоминальнаяСтоимость</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Валюта</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Возвратный</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>МногократноеИспользование</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СрокДействия</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДействуетДо</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>

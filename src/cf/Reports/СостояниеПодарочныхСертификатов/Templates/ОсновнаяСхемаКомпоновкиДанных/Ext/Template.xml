@@ -84,6 +84,26 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаноСтоимости</dataPath>
+			<field>СписаноСтоимости</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списано стоимости</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АктивированоСтоимости</dataPath>
+			<field>АктивированоСтоимости</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активировано стоимости</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ВидыПодарочныхСертификатов.Ссылка КАК Вид,
@@ -97,46 +117,36 @@
 	ВидыПодарочныхСертификатов.Действует КАК Действует,
 	ИсторияСтатусовПодарочныхСертификатовСрезПоследних.Статус КАК Статус,
 	ИсторияСтатусовПодарочныхСертификатовСрезПоследних.ДействуетДо КАК ДействуетДо,
-	ВЫБОР
-		КОГДА ИсторияСтатусовПодарочныхСертификатовСрезПоследних.Статус ЕСТЬ NULL
-			ТОГДА ВидыПодарочныхСертификатов.НоминальнаяСтоимость
-		ИНАЧЕ ПодарочныеСертификатыОстатки.СуммаОстаток
-	КОНЕЦ КАК НеиспользованныйОстатокСтоимости
+	ЕСТЬNULL(ПодарочныеСертификатыОстаткиИОбороты.СуммаПриход, 0) КАК АктивированоСтоимости,
+	ЕСТЬNULL(ПодарочныеСертификатыОстаткиИОбороты.СуммаРасход, 0) КАК СписаноСтоимости,
+	ЕСТЬNULL(ПодарочныеСертификатыОстаткиИОбороты.СуммаКонечныйОстаток, 0) КАК НеиспользованныйОстатокСтоимости
 ИЗ
 	Справочник.ПодарочныеСертификаты КАК ПодарочныеСертификаты
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.ВидыПодарочныхСертификатов КАК ВидыПодарочныхСертификатов
 		ПО ПодарочныеСертификаты.Владелец = ВидыПодарочныхСертификатов.Ссылка
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИсторияСтатусовПодарочныхСертификатов.СрезПоследних КАК ИсторияСтатусовПодарочныхСертификатовСрезПоследних
 		ПО (ИсторияСтатусовПодарочныхСертификатовСрезПоследних.ПодарочныйСертификат = ПодарочныеСертификаты.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ПодарочныеСертификаты.Остатки КАК ПодарочныеСертификатыОстатки
-		ПО (ПодарочныеСертификатыОстатки.ПодарочныйСертификат = ПодарочныеСертификаты.Ссылка)</query>
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ПодарочныеСертификаты.ОстаткиИОбороты КАК ПодарочныеСертификатыОстаткиИОбороты
+		ПО (ПодарочныеСертификатыОстаткиИОбороты.ПодарочныйСертификат = ПодарочныеСертификаты.Ссылка)</query>
 	</dataSet>
-	<calculatedField>
-		<dataPath>СписаноСтоимости</dataPath>
-		<expression>НоминальнаяСтоимость - НеиспользованныйОстатокСтоимости</expression>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Списано стоимости</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:TypeId>7e5bbe0e-d9d5-4d1a-bb0f-3301ac51f412</v8:TypeId>
-		</valueType>
-	</calculatedField>
 	<totalField>
 		<dataPath>НоминальнаяСтоимость</dataPath>
 		<expression>Сумма(НоминальнаяСтоимость)</expression>
 		<group>Валюта</group>
 	</totalField>
 	<totalField>
-		<dataPath>НеиспользованныйОстатокСтоимости</dataPath>
-		<expression>Сумма(НеиспользованныйОстатокСтоимости)</expression>
+		<dataPath>АктивированоСтоимости</dataPath>
+		<expression>Сумма(АктивированоСтоимости)</expression>
 		<group>Валюта</group>
 	</totalField>
 	<totalField>
 		<dataPath>СписаноСтоимости</dataPath>
-		<expression>Сумма(НоминальнаяСтоимость) - Сумма(НеиспользованныйОстатокСтоимости)</expression>
+		<expression>Сумма(СписаноСтоимости)</expression>
+		<group>Валюта</group>
+	</totalField>
+	<totalField>
+		<dataPath>НеиспользованныйОстатокСтоимости</dataPath>
+		<expression>Сумма(НеиспользованныйОстатокСтоимости)</expression>
 		<group>Валюта</group>
 	</totalField>
 	<parameter>
@@ -155,6 +165,41 @@
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ДОБАВИТЬКДАТЕ(&amp;Период, "СЕКУНДА", -1)</expression>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>СостояниеПодарочныхСертификатов</dcsset:name>
@@ -180,6 +225,9 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДействуетДо</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АктивированоСтоимости</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СписаноСтоимости</dcsset:field>
